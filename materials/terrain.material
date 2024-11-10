@@ -1,0 +1,53 @@
+{
+  "materials": {
+    "version": "1.0.0",
+
+    "terrain_base": {
+      "vertexShader": "shaders/rc.vsh",
+      "vrGeometryShader": "shaders/renderchunk.geometry",
+      "fragmentShader": "shaders/rc.fsh",
+
+      "+defines": [ "LOW_PRECISION", "TEXEL_AA", "ATLAS_TEXTURE" ],
+      "+states": [ "DisableAlphaWrite" ],
+
+      "+samplerStates": [
+        {
+          "samplerIndex": 0,
+          "textureFilter": "Point"
+        },
+        {
+          "samplerIndex": 1,
+          "textureFilter": "Bilinear"
+        }
+      ],
+
+      "vertexFields": [
+        { "field": "Position" },
+        { "field": "UV1" },
+        { "field": "Color" },
+        { "field": "UV0" }
+      ],
+      "msaaSupport": "Both",
+
+      "variants": [
+        { "fog": { "+defines": [ "FOG" ] } },
+        { "lit": { "+defines": [ "ALWAYS_LIT" ] } },
+        { "underwater": { "+defines": [ "FOG_UNDERWATER" ] } },
+        { "fog.underwater": { "+defines": [ "FOG_UNDERWATER" ] } },
+        { "fading": { "+defines": [ "FOG", "ALLOW_FADE" ] } }
+      ]
+    },
+
+    "terrain_blend:terrain_base": {
+      "+defines": [ "BLEND" ],
+      "+states": [
+        "Blending"
+      ],
+      "+variants": [
+        { "underwater": { "+defines": [ "FOG_UNDERWATER" ] } },
+        { "fog.underwater": { "+defines": [ "FOG_UNDERWATER" ] } }
+      ]
+    }
+
+  }
+}

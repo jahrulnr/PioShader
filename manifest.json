@@ -1,0 +1,19 @@
+{
+   "format_version" : 1,
+   "header" : {
+      "description" : "Youtube: PioDiamond\nIG: PioDiamond",
+      "name" : "PioShader v5 - High",
+      "uuid" : "a3a1b908-a97b-4bf9-abcd-2b6e0db43121",
+      "version" : [ 5, 0, 0 ]
+   },
+   "modules" : [
+      {
+         "description" : "----",
+         "type" : "resources",
+         "uuid" : "a76dc587-abcd-3e8c-9bf3-214b7f630231",
+         "version" : [ 5, 0, 0 ]
+      }
+   ]
+}
+
+

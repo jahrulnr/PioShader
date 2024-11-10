@@ -1,0 +1,16 @@
+{
+  "sun_moon": {
+		"vertexShader" : "shaders/sm.vsh",
+		"fragmentShader" : "shaders/sm.fsh"
+  },
+
+  "cubemap": {
+    "vertexShader": "shaders/cm.vsh",
+    "fragmentShader": "shaders/cm.fsh"
+  },
+
+  "skyplane": {
+		"vertexShader" : "shaders/sk.vsh",
+		"fragmentShader" : "shaders/sk.fsh"
+  }
+}
